@@ -1,0 +1,33 @@
+@UserManagement_HostAddress = http://localhost:5204
+
+### Get All Users
+GET {{UserManagement_HostAddress}}/users
+Accept: application/json
+
+### Get User by ID
+GET {{UserManagement_HostAddress}}/users/1
+Accept: application/json
+
+### Create a New User
+POST {{UserManagement_HostAddress}}/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+
+### Update User by ID
+PUT {{UserManagement_HostAddress}}/users/1
+Content-Type: application/json
+
+{
+  "name": "John Doe Updated",
+  "email": "john.doe.updated@example.com",
+  "password": "newpassword123"
+}
+
+### Delete User by ID
+DELETE {{UserManagement_HostAddress}}/users/1
+Accept: application/json
